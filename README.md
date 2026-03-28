@@ -1,10 +1,10 @@
-# 202282700-HussainAlsadah-assignment1
+# 202282700-HussainAlsadah-assignment2
 
-Personal portfolio (Assignment 1) — simple responsive single-page site built with HTML, CSS and JavaScript.
+Personal portfolio (Assignment 2) — simple responsive single-page site built with HTML, CSS and JavaScript.
 
 Overview
 --------
-This repository contains a lightweight personal portfolio with the following sections: About, Projects, Hobbies, Contact.
+This repository contains a lightweight personal portfolio with the following sections: About, Projects, Hobbies, Contact, some interactions and animations.
 
 Features
 --------
@@ -16,10 +16,10 @@ Features
 
 Run locally
 -----------
-1. Clone the repository: https://github.com/HussainAlsadah/202282700-HussainAlsadah-assignment1.git
+1. Clone the repository: https://github.com/HussainAlsadah/202282700-HussainAlsadah-assignment2.git
 
 ```bash
-git clone https://github.com/HussainAlsadah/202282700-HussainAlsadah-assignment1.git
+git clone https://github.com/HussainAlsadah/202282700-HussainAlsadah-assignment2.git
 cd 202282700-HussainAlsadah-assignment1
 ```
 
@@ -36,7 +36,7 @@ Files & Structure
 
 AI Usage (summary)
 -------------------
-I have used AI as a tools (ChatGPT and Claude) to generate code and gives recommendations and ideas that needs close attention to details, outputs needed manual review, testing, modifications. Significant changes were needed to fit my vision. for the texts I made sure that all of them reflect what I want to say and made as much changes as needed to reflect that on an honest scale.
+I have used AI as a tools for assignment 1 :(ChatGPT and Claude), and for assignment 2: (Claude) to generate code and gives recommendations and ideas that needs close attention to details, outputs needed manual review, testing, modifications. Significant changes were needed to fit my vision. for the texts I made sure that all of them reflect what I want to say and made as much changes as needed to reflect that on an honest scale.
 See `docs/ai-usage-report.md` for details.
 
 
