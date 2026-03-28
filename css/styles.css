@@ -1,0 +1,516 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+    color: #2c3e50;
+    transition: background 0.3s ease;
+}
+
+.section {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #1a3a52;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+}
+
+/* Navbar */
+header {
+    background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%);
+    padding: 20px 0;
+    box-shadow: 0 4px 20px rgba(15, 40, 71, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    flex: 0 1 auto;
+    margin-right: 12px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex: 0 1 auto;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-links li {
+    white-space: nowrap;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.nav-toggle svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #64b5f6;
+    border-bottom-color: #64b5f6;
+}
+
+/* Alternate Background */
+.alt-bg {
+    background: linear-gradient(135deg, #dfe8f5 0%, #e8f0fa 100%) !important;
+}
+
+#about {
+    background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+}
+
+#projects {
+    background: linear-gradient(135deg, #dfe8f5 0%, #e8f0fa 100%);
+}
+
+#hobbies {
+    background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+}
+
+#contact {
+    background: linear-gradient(135deg, #dfe8f5 0%, #e8f0fa 100%);
+}
+
+/* Projects */
+.project-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(15, 40, 71, 0.08);
+    border: 1px solid rgba(26, 58, 82, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    box-shadow: 0 12px 35px rgba(15, 40, 71, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(100, 181, 246, 0.2);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+    color: #1a3a52;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.project-card p {
+    color: #546e7a;
+    line-height: 1.8;
+    font-size: 0.95em;
+}
+
+/* Project media (image preview) */
+.project-media {
+    position: relative;
+    height: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background: #f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.project-media:hover img {
+    transform: scale(1.03);
+}
+
+.project-badge {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    background: rgba(26,58,82,0.85);
+    color: white;
+    padding: 6px 10px;
+    font-weight: 700;
+    font-size: 0.85em;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(15,40,71,0.25);
+}
+
+/* Hobbies Section */
+.hobbies-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+}
+
+.hobbies-section h2 {
+    color: #1a3a52;
+}
+
+.hobbies-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hobby-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    border: 1px solid rgba(26, 58, 82, 0.05);
+    box-shadow: 0 4px 15px rgba(15, 40, 71, 0.08);
+    color: #2c3e50;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hobby-card:hover {
+    box-shadow: 0 12px 35px rgba(15, 40, 71, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(100, 181, 246, 0.2);
+}
+
+.hobby-card h3 {
+    margin-bottom: 15px;
+    color: #1a3a52;
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.hobby-card p {
+    color: #546e7a;
+    line-height: 1.8;
+    font-size: 0.95em;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px 16px;
+    border: 2px solid #e0e7ff;
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.95em;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #90a4ae;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #64b5f6;
+    box-shadow: 0 0 0 4px rgba(100, 181, 246, 0.1);
+    background: #f8fbff;
+}
+
+.contact-form button {
+    padding: 14px 32px;
+    border: none;
+    background: linear-gradient(135deg, #1a3a52 0%, #2a5a7a 100%);
+    color: white;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(135deg, #0f2847 0%, #1a3a52 100%);
+    box-shadow: 0 8px 20px rgba(15, 40, 71, 0.2);
+    transform: translateY(-2px);
+}
+
+.contact-form button:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%);
+    color: white;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #2a5a7a;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(15, 40, 71, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #1a3a52;
+    box-shadow: 0 6px 20px rgba(15, 40, 71, 0.3);
+    transform: scale(1.1);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.dark-mode {
+    background: linear-gradient(135deg, #0d1b26 0%, #111f2e 100%);
+    color: #e0e0e0;
+}
+
+.dark-mode h2 {
+    color: white;
+}
+
+.dark-mode #about,
+.dark-mode #hobbies {
+    background: linear-gradient(135deg, #0d1b26 0%, #111f2e 100%) !important;
+}
+
+.dark-mode #projects,
+.dark-mode #contact {
+    background: linear-gradient(135deg, #141c28 0%, #1a2538 100%) !important;
+}
+
+.dark-mode .theme-toggle-btn {
+    background-color: #455a64;
+}
+
+.dark-mode .project-card {
+    background-color: #1a252f;
+    border-color: rgba(100, 181, 246, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .project-media {
+    background: #15202a;
+}
+
+.dark-mode .project-badge {
+    background: rgba(100, 181, 246, 0.12);
+    color: #64b5f6;
+}
+
+.dark-mode .project-card h3 {
+    color: #64b5f6;
+}
+
+.dark-mode .project-card p {
+    color: #b0bec5;
+}
+
+.dark-mode .hobby-card {
+    background-color: #1a252f;
+    border-color: rgba(100, 181, 246, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .hobby-card h3 {
+    color: #64b5f6;
+}
+
+.dark-mode .hobby-card p {
+    color: #b0bec5;
+}
+
+.dark-mode .hobbies-section {
+    background: linear-gradient(135deg, #0d1b26 0%, #111f2e 100%);
+}
+
+.dark-mode footer {
+    background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%) !important;
+    color: white;
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+    background-color: #1a252f;
+    border-color: rgba(100, 181, 246, 0.2);
+    color: #e0e0e0;
+}
+
+.dark-mode .contact-form input::placeholder,
+.dark-mode .contact-form textarea::placeholder {
+    color: #757575;
+}
+
+.dark-mode .contact-form input:focus,
+.dark-mode .contact-form textarea:focus {
+    background-color: rgba(100, 181, 246, 0.1);
+    border-color: #64b5f6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 20px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-direction: column;
+        text-align: center;
+        display: none;
+        position: absolute;
+        top: 64px;
+        right: 20px;
+        background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%);
+        padding: 12px 16px;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(10, 20, 40, 0.4);
+        z-index: 250;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+        flex: 0 0 auto;
+    }
+
+    .nav-links a {
+        color: white;
+    }
+
+    .project-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .hobbies-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .hobby-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .contact-form {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
