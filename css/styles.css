@@ -27,14 +27,19 @@ h2 {
     margin-bottom: 40px;
     text-align: center;
     color: #1a3a52;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 2.2em;
     font-weight: 700;
     letter-spacing: -0.5px;
     transition: color 0.3s ease;
 }
 
-/* Navbar */
+.hidden {
+    display: none !important;
+}
+
+/* =============================
+   Navbar
+   ============================= */
 header {
     background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%);
     padding: 20px 0;
@@ -57,7 +62,6 @@ header {
 
 .logo {
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.5em;
     font-weight: 700;
     letter-spacing: -0.5px;
@@ -75,11 +79,8 @@ header {
     align-items: center;
 }
 
-.nav-links li {
-    white-space: nowrap;
-}
+.nav-links li { white-space: nowrap; }
 
-/* Mobile nav toggle */
 .nav-toggle {
     display: none;
     background: transparent;
@@ -90,18 +91,14 @@ header {
     border-radius: 6px;
 }
 
-.nav-toggle svg {
-    display: block;
-    width: 22px;
-    height: 22px;
-}
+.nav-toggle svg { display: block; width: 22px; height: 22px; }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95em;
-    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
     padding-bottom: 2px;
     border-bottom: 2px solid transparent;
 }
@@ -111,28 +108,150 @@ header {
     border-bottom-color: #64b5f6;
 }
 
-/* Alternate Background */
-.alt-bg {
-    background: linear-gradient(135deg, #dfe8f5 0%, #e8f0fa 100%) !important;
+/* =============================
+   Section backgrounds
+   ============================= */
+#about   { background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%); }
+#projects { background: linear-gradient(135deg, #dfe8f5 0%, #e8f0fa 100%); }
+#hobbies { background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%); }
+#contact { background: linear-gradient(135deg, #dfe8f5 0%, #e8f0fa 100%); }
+
+/* =============================
+   Tab Bar (About section)
+   ============================= */
+.tab-bar {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 32px;
+    border-bottom: 2px solid #dce6f0;
+    padding-bottom: 0;
 }
 
-#about {
-    background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 24px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #7a9ab5;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    border-radius: 6px 6px 0 0;
+    transition: color 0.25s ease, border-bottom-color 0.25s ease, background 0.2s ease;
 }
 
-#projects {
-    background: linear-gradient(135deg, #dfe8f5 0%, #e8f0fa 100%);
+.tab-btn:hover {
+    color: #1a3a52;
+    background: rgba(26, 58, 82, 0.05);
 }
 
-#hobbies {
-    background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+.tab-btn.active {
+    color: #1a3a52;
+    border-bottom-color: #1a3a52;
 }
 
-#contact {
-    background: linear-gradient(135deg, #dfe8f5 0%, #e8f0fa 100%);
+/* Tab Panels */
+.tab-panels { min-height: 180px; }
+
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
 }
 
-/* Projects */
+.tab-panel.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Skills */
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skill-item { display: flex; flex-direction: column; gap: 6px; }
+
+.skill-name {
+    font-weight: 600;
+    font-size: 0.95em;
+    color: #1a3a52;
+}
+
+.skill-bar {
+    background: #dce6f0;
+    border-radius: 999px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1a3a52, #2a7ab5);
+    border-radius: 999px;
+    width: 0%;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Experience */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.experience-item {
+    border-left: 3px solid #1a3a52;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.exp-role {
+    font-weight: 700;
+    color: #1a3a52;
+    font-size: 1.05em;
+}
+
+.exp-date {
+    font-size: 0.85em;
+    color: #7a9ab5;
+    white-space: nowrap;
+}
+
+.exp-place {
+    font-size: 0.9em;
+    color: #546e7a;
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.experience-item p {
+    color: #546e7a;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+/* =============================
+   Projects
+   ============================= */
 .project-grid {
     display: flex;
     gap: 30px;
@@ -160,19 +279,13 @@ header {
 .project-card h3 {
     margin-bottom: 15px;
     color: #1a3a52;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.3em;
     font-weight: 700;
     letter-spacing: -0.3px;
 }
 
-.project-card p {
-    color: #546e7a;
-    line-height: 1.8;
-    font-size: 0.95em;
-}
+.project-card p { color: #546e7a; line-height: 1.8; font-size: 0.95em; }
 
-/* Project media (image preview) */
 .project-media {
     position: relative;
     height: 160px;
@@ -186,21 +299,15 @@ header {
 }
 
 .project-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; height: 100%; object-fit: cover; display: block;
     transition: transform 0.4s ease, filter 0.3s ease;
 }
 
-.project-media:hover img {
-    transform: scale(1.03);
-}
+.project-media:hover img { transform: scale(1.03); }
 
 .project-badge {
     position: absolute;
-    left: 12px;
-    top: 12px;
+    left: 12px; top: 12px;
     background: rgba(26,58,82,0.85);
     color: white;
     padding: 6px 10px;
@@ -210,20 +317,18 @@ header {
     box-shadow: 0 6px 18px rgba(15,40,71,0.25);
 }
 
-/* Hobbies Section */
-.hobbies-section {
-    background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
-}
-
-.hobbies-section h2 {
-    color: #1a3a52;
-}
+/* =============================
+   Hobbies
+   ============================= */
+.hobbies-section { background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%); }
+.hobbies-section h2 { color: #1a3a52; }
 
 .hobbies-content {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .hobby-card {
@@ -243,27 +348,148 @@ header {
     border-color: rgba(100, 181, 246, 0.2);
 }
 
-.hobby-card h3 {
-    margin-bottom: 15px;
-    color: #1a3a52;
-    font-size: 1.3em;
-    font-weight: 700;
-    letter-spacing: -0.3px;
+.hobby-card h3 { margin-bottom: 15px; color: #1a3a52; font-size: 1.3em; font-weight: 700; }
+.hobby-card p  { color: #546e7a; line-height: 1.8; font-size: 0.95em; }
+
+/* =============================
+   Trivia Widget
+   ============================= */
+.trivia-widget {
+    max-width: 620px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(15, 40, 71, 0.1);
+    border: 1px solid rgba(26, 58, 82, 0.07);
 }
 
-.hobby-card p {
-    color: #546e7a;
-    line-height: 1.8;
+.trivia-title {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #1a3a52;
+    margin-bottom: 20px;
+}
+
+#trivia-loading {
+    text-align: center;
+    color: #7a9ab5;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+.trivia-category {
+    font-size: 0.78em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #7a9ab5;
+    margin-bottom: 10px;
+}
+
+.trivia-question {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #1a3a52;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.trivia-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.trivia-answer-btn {
+    background: #f0f5fb;
+    border: 2px solid #dce6f0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 0.95em;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.trivia-answer-btn:hover:not(:disabled) {
+    background: #dce6f0;
+    border-color: #2a7ab5;
+    color: #1a3a52;
+}
+
+.trivia-answer-btn.correct {
+    background: #e6f9f0;
+    border-color: #27ae60;
+    color: #1a6b3a;
+}
+
+.trivia-answer-btn.wrong {
+    background: #fdecea;
+    border-color: #e74c3c;
+    color: #922b21;
+}
+
+.trivia-answer-btn:disabled { cursor: default; }
+
+.trivia-feedback {
+    font-weight: 600;
+    font-size: 0.95em;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.trivia-feedback.correct { background: #e6f9f0; color: #1a6b3a; }
+.trivia-feedback.wrong   { background: #fdecea; color: #922b21; }
+
+.trivia-next-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #1a3a52 0%, #2a5a7a 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.trivia-next-btn:hover {
+    background: linear-gradient(135deg, #0f2847 0%, #1a3a52 100%);
+    transform: translateY(-1px);
+}
+
+.trivia-error {
+    text-align: center;
+    color: #c0392b;
+    background: #fdecea;
+    border-radius: 8px;
+    padding: 14px;
     font-size: 0.95em;
 }
 
-/* Contact Form */
+/* =============================
+   Contact Form
+   ============================= */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 6px;
     max-width: 500px;
     margin: auto;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 10px;
 }
 
 .contact-form input,
@@ -271,7 +497,7 @@ header {
     padding: 14px 16px;
     border: 2px solid #e0e7ff;
     border-radius: 8px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: inherit;
     font-size: 0.95em;
     color: #2c3e50;
     transition: all 0.3s ease;
@@ -279,9 +505,7 @@ header {
 }
 
 .contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #90a4ae;
-}
+.contact-form textarea::placeholder { color: #90a4ae; }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
@@ -291,13 +515,26 @@ header {
     background: #f8fbff;
 }
 
+.contact-form input.input-error,
+.contact-form textarea.input-error {
+    border-color: #e74c3c;
+    background: #fff8f8;
+}
+
+.field-error {
+    font-size: 0.82em;
+    color: #e74c3c;
+    font-weight: 500;
+    min-height: 16px;
+}
+
 .contact-form button {
     padding: 14px 32px;
     border: none;
     background: linear-gradient(135deg, #1a3a52 0%, #2a5a7a 100%);
     color: white;
     font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: inherit;
     font-size: 1em;
     border-radius: 8px;
     cursor: pointer;
@@ -311,21 +548,34 @@ header {
     transform: translateY(-2px);
 }
 
-.contact-form button:active {
-    transform: translateY(0);
+.contact-form button:active { transform: translateY(0); }
+
+.form-success {
+    margin-top: 12px;
+    padding: 14px;
+    background: #e6f9f0;
+    border: 1px solid #27ae60;
+    border-radius: 8px;
+    color: #1a6b3a;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
 }
 
-/* Footer */
+/* =============================
+   Footer
+   ============================= */
 footer {
     text-align: center;
     padding: 30px 20px;
     background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%);
     color: white;
     font-size: 0.9em;
-    transition: all 0.3s ease;
 }
 
-/* Theme Toggle Button */
+/* =============================
+   Theme Toggle Button
+   ============================= */
 .theme-toggle-btn {
     position: fixed;
     bottom: 20px;
@@ -351,18 +601,17 @@ footer {
     transform: scale(1.1);
 }
 
-.theme-toggle-btn:active {
-    transform: scale(0.95);
-}
+.theme-toggle-btn:active { transform: scale(0.95); }
 
+/* =============================
+   Dark Mode
+   ============================= */
 .dark-mode {
     background: linear-gradient(135deg, #0d1b26 0%, #111f2e 100%);
     color: #e0e0e0;
 }
 
-.dark-mode h2 {
-    color: white;
-}
+.dark-mode h2 { color: #e0e0e0; }
 
 .dark-mode #about,
 .dark-mode #hobbies {
@@ -374,84 +623,95 @@ footer {
     background: linear-gradient(135deg, #141c28 0%, #1a2538 100%) !important;
 }
 
-.dark-mode .theme-toggle-btn {
-    background-color: #455a64;
-}
+/* Tabs dark */
+.dark-mode .tab-bar { border-bottom-color: #2a3a50; }
+.dark-mode .tab-btn { color: #5a7a95; }
+.dark-mode .tab-btn:hover { color: #90c4e8; background: rgba(100, 181, 246, 0.07); }
+.dark-mode .tab-btn.active { color: #90c4e8; border-bottom-color: #64b5f6; }
 
+/* Skill bars dark */
+.dark-mode .skill-bar { background: #1e2e3e; }
+.dark-mode .skill-fill { background: linear-gradient(90deg, #2a5a7a, #64b5f6); }
+.dark-mode .skill-name { color: #90c4e8; }
+
+/* Experience dark */
+.dark-mode .experience-item { border-left-color: #64b5f6; }
+.dark-mode .exp-role { color: #90c4e8; }
+.dark-mode .exp-date { color: #5a7a95; }
+.dark-mode .exp-place { color: #7a9ab5; }
+.dark-mode .experience-item p { color: #b0bec5; }
+
+/* Project cards dark */
 .dark-mode .project-card {
     background-color: #1a252f;
     border-color: rgba(100, 181, 246, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
+.dark-mode .project-media { background: #15202a; }
+.dark-mode .project-badge { background: rgba(100,181,246,0.12); color: #64b5f6; }
+.dark-mode .project-card h3 { color: #64b5f6; }
+.dark-mode .project-card p { color: #b0bec5; }
 
-.dark-mode .project-media {
-    background: #15202a;
-}
-
-.dark-mode .project-badge {
-    background: rgba(100, 181, 246, 0.12);
-    color: #64b5f6;
-}
-
-.dark-mode .project-card h3 {
-    color: #64b5f6;
-}
-
-.dark-mode .project-card p {
-    color: #b0bec5;
-}
-
+/* Hobby cards dark */
 .dark-mode .hobby-card {
     background-color: #1a252f;
     border-color: rgba(100, 181, 246, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
+.dark-mode .hobby-card h3 { color: #64b5f6; }
+.dark-mode .hobby-card p  { color: #b0bec5; }
 
-.dark-mode .hobby-card h3 {
-    color: #64b5f6;
+/* Trivia dark */
+.dark-mode .trivia-widget {
+    background: #1a252f;
+    border-color: rgba(100, 181, 246, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-
-.dark-mode .hobby-card p {
-    color: #b0bec5;
+.dark-mode .trivia-title   { color: #90c4e8; }
+.dark-mode .trivia-category { color: #5a7a95; }
+.dark-mode .trivia-question { color: #d0e0f0; }
+.dark-mode .trivia-answer-btn {
+    background: #15202a;
+    border-color: #2a3a50;
+    color: #c0d0e0;
 }
-
-.dark-mode .hobbies-section {
-    background: linear-gradient(135deg, #0d1b26 0%, #111f2e 100%);
+.dark-mode .trivia-answer-btn:hover:not(:disabled) {
+    background: #1e2e3e;
+    border-color: #64b5f6;
+    color: #90c4e8;
 }
+.dark-mode #trivia-loading { color: #5a7a95; }
 
-.dark-mode footer {
-    background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%) !important;
-    color: white;
-}
-
+/* Form dark */
 .dark-mode .contact-form input,
 .dark-mode .contact-form textarea {
     background-color: #1a252f;
     border-color: rgba(100, 181, 246, 0.2);
     color: #e0e0e0;
 }
-
 .dark-mode .contact-form input::placeholder,
-.dark-mode .contact-form textarea::placeholder {
-    color: #757575;
-}
-
+.dark-mode .contact-form textarea::placeholder { color: #4a6a80; }
 .dark-mode .contact-form input:focus,
 .dark-mode .contact-form textarea:focus {
-    background-color: rgba(100, 181, 246, 0.1);
+    background-color: rgba(100, 181, 246, 0.08);
     border-color: #64b5f6;
 }
+.dark-mode .contact-form input.input-error,
+.dark-mode .contact-form textarea.input-error {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.08);
+}
 
-/* Responsive Design */
+.dark-mode .theme-toggle-btn { background-color: #455a64; }
+.dark-mode footer { background: linear-gradient(135deg, #0a1f38 0%, #142d47 50%, #1d495c 100%) !important; }
+
+/* =============================
+   Responsive
+   ============================= */
 @media (max-width: 768px) {
-    .section {
-        padding: 60px 20px;
-    }
+    .section { padding: 60px 20px; }
 
-    h2 {
-        font-size: 1.8em;
-        margin-bottom: 30px;
-    }
+    h2 { font-size: 1.8em; margin-bottom: 30px; }
 
     .navbar {
         flex-direction: column;
@@ -474,43 +734,24 @@ footer {
         z-index: 250;
     }
 
-    .nav-links.open {
-        display: flex;
-    }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: block; flex: 0 0 auto; }
+    .nav-links a { color: white; }
 
-    .nav-toggle {
-        display: block;
-        flex: 0 0 auto;
-    }
+    .tab-btn { padding: 8px 14px; font-size: 0.9em; }
 
-    .nav-links a {
-        color: white;
-    }
-
-    .project-grid {
+    .project-grid, .hobbies-content {
         flex-direction: column;
         align-items: center;
         gap: 25px;
     }
 
-    .project-card {
+    .project-card, .hobby-card {
         width: 100%;
         max-width: 350px;
     }
 
-    .hobbies-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
+    .contact-form { max-width: 100%; padding: 0 10px; }
 
-    .hobby-card {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .contact-form {
-        max-width: 100%;
-        padding: 0 10px;
-    }
+    .exp-header { flex-direction: column; gap: 2px; }
 }
